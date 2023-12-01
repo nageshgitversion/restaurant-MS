@@ -16,7 +16,7 @@ import com.restaurantlisting.project.dto.RestaurantDto;
 import com.restaurantlisting.project.entity.Restaurant;
 import com.restaurantlisting.project.service.RestaurantService;
 
-public class restaurantcontrollerTest {
+class RestaurantControllerTests {
 	
 	@InjectMocks
 	RestaurantController controller;
@@ -25,14 +25,14 @@ public class restaurantcontrollerTest {
 	private RestaurantService service;
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		MockitoAnnotations.openMocks(this);
 	
 	}
 	
 	
 	@Test
-	public void testGetByRestaurantId() {
+    void testGetByRestaurantId() {
 		Restaurant mockdata = new Restaurant();
 		mockdata.setRestaurantId(1);
 		mockdata.setRestaurantName("VIGENESH RESTAURANT");
@@ -51,7 +51,7 @@ public class restaurantcontrollerTest {
 	}
 	
 	@Test
-	public void testaddRestaurant() {
+    void testaddRestaurant() {
 		RestaurantDto mockdata = new RestaurantDto();
 		mockdata.setRestaurantId(1);
 		mockdata.setRestaurantName("VIGENESH RESTAURANT");

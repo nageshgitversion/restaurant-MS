@@ -17,7 +17,7 @@ import com.restaurantlisting.project.entity.Restaurant;
 import com.restaurantlisting.project.repository.RestaurantRepository;
 import com.restaurantlisting.project.service.RestaurantService;
 
-public class RestaurantServiceTests {
+class RestaurantServiceTests {
 	
 	@InjectMocks
 	RestaurantService service;
@@ -26,13 +26,13 @@ public class RestaurantServiceTests {
 	private RestaurantRepository repo;
 	
 	@BeforeEach
-	public void setup() {
+	void setup() {
 		MockitoAnnotations.openMocks(this);
 	
 	}
 	
 	@Test
-	public void testaddRestaurant() {
+	void testaddRestaurant() {
 		
 		RestaurantDto mockdata = new RestaurantDto();
 		mockdata.setRestaurantId(1);
@@ -56,8 +56,8 @@ public class RestaurantServiceTests {
 		assertEquals(status1, status);
 		
 }
-	
-	public void testgetRestaurantById() {
+	@Test
+	void testgetRestaurantById() {
 		
 		Integer mockId=1;
 		
