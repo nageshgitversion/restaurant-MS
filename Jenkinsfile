@@ -81,11 +81,11 @@ pipeline {
           [credentialsId: 'git-ssh', url: 'https://github.com/nageshgitversion/deployment-folder.git']
         ])
         script {
-          sh ''
-          '
+          sh '''
+          
           sed - i "s/image:.*/image: rasukuntanagesh\\/restaurant-service-new:${VERSION}/"
-          aws / restaurant - manifest.yml ''
-          '
+          aws / restaurant - manifest.yml
+          '''
           sh 'git checkout main'
           sh 'git add .'
           sh 'git commit -m "Update image tag"'
