@@ -83,8 +83,8 @@ pipeline {
         script {
           sh '''
           
-          sed - i "s/image:.*/image: rasukuntanagesh\\/restaurant-service-new:${VERSION}/"
-          aws / restaurant - manifest.yml
+          sed -i "s/image:.*/image: rasukuntanagesh\\/restaurant-service-new:${VERSION}/"
+          aws/restaurant-manifest.yml
           '''
           sh 'git checkout main'
           sh 'git add .'
