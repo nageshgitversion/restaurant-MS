@@ -84,7 +84,7 @@ pipeline {
           sh '''
           
           sed -i "s/image:.*/image: rasukuntanagesh\\/restaurant-listing-service:${VERSION}/"
-          deployment-folder/aws/restaurant-manifest.yml
+          aws/restaurant-manifest.yml
           '''
           sh 'git checkout main'
           sh 'git add .'
