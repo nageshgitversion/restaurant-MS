@@ -4,6 +4,9 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('DOCKER_HUB_CREDENTIAL')
     VERSION = "${env.BUILD_ID}"
+    
+    GIT_USERNAME = credentials('nageshgitversion')
+    GIT_PASSWORD = credentials('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')
 
   }
 
@@ -90,7 +93,8 @@ pipeline {
           sh 'git add .'
           sh 'git commit -m "Update image tag"' 
           sshagent(['git-ssh']) { 
-            sh('git push') 
+            sh('git push':${GIT_USERNAME}:${GIT_PASSWORD})
+       
           } 
         }
       }
