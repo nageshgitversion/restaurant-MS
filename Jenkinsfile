@@ -90,7 +90,7 @@ pipeline {
           sh 'git add .'
           sh 'git commit -m "Update image tag"'
           sshagent(['git-ssh']) {
-            sh('git push')
+            sh('git push') 
           }
         }
       }
