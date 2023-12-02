@@ -61,8 +61,8 @@ pipeline {
     stage('Docker Build and Push') {
       steps {
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-        sh 'docker build -t rasukuntanagesh/restaurant-service-new:${VERSION} .'
-        sh 'docker push rasukuntanagesh/restaurant-service-new:${VERSION}'
+        sh 'docker build -t rasukuntanagesh/restaurant-listing-service:${VERSION} .'
+        sh 'docker push rasukuntanagesh/restaurant-listing-service:${VERSION}'
       }
     }
 
@@ -83,8 +83,8 @@ pipeline {
         script {
           sh '''
           
-          sed -i "s/image:.*/image: rasukuntanagesh\\/restaurant-service-new:${VERSION}/"
-          aws/restaurant-manifest.yml
+          sed -i "s/image:.*/image: rasukuntanagesh\\/restaurant-listing-service:${VERSION}/"
+          deployment-folder/aws/restaurant-manifest.yml
           '''
           sh 'git checkout main'
           sh 'git add .'
