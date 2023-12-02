@@ -16,7 +16,7 @@ import com.restaurantlisting.project.service.RestaurantService;
 @RestController
 public class RestaurantController {
 	
-	
+	String name;
 	
 	@Autowired
 	RestaurantService service;
