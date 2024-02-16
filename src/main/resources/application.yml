@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: Nag15188
-    url: jdbc:mysql://mynewsqldb.ct91asccasgf.eu-west-2.rds.amazonaws.com:3306/restaurant
-    username: admin
+    password: Nag@15199
+    url: jdbc:mysql://localhost:3306/nagesh
+    username: root
   jpa:
     generate-ddl: true
     hibernate:
