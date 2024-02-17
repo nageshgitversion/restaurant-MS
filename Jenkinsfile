@@ -28,15 +28,15 @@ pipeline {
 
     stage('SonarQube Analysis') {
       steps {
-        sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=http://18.168.154.40:9000/ -Dsonar.login=squ_e360c43bfffe41a497aa4fd6f06f1026504f8534'
+        sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=http://18.130.221.61:9000/ -Dsonar.login=squ_2309631a63956c85cacadba4e5e8cd1b129d7246'
       }
     }
 
     stage('Check code coverage') {
       steps {
         script {
-          def token = "squ_e360c43bfffe41a497aa4fd6f06f1026504f8534"
-          def sonarQubeUrl = "http://18.168.154.40:9000/api"
+          def token = "squ_2309631a63956c85cacadba4e5e8cd1b129d7246"
+          def sonarQubeUrl = "http://18.130.221.61:9000/api"
           def componentKey = "com.restaurantlisting:project"
           def coverageThreshold = 70.0
 
@@ -76,7 +76,7 @@ pipeline {
 
     stage('Update Image Tag in GitOps') {
       steps {
-        checkout scmGit(branches: [[name: '*/main'] ], extensions: [], userRemoteConfigs: [[credentialsId: 'git-ssh', url: 'https://github.com/nageshgitversion/deployment-folder.git']])
+        checkout scmGit(branches: [[name: '*/main'] ], extensions: [], userRemoteConfigs: [[credentialsId: 'git-ssh', url: 'git@github.com:nageshgitversion/deployment-folder.git']])
         script {
           sh '''
           
