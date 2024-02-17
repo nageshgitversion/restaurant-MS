@@ -1,17 +1,18 @@
-server:
-  port: 8081
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: Nag@15199
-    url: jdbc:mysql://localhost:3306/nag
+    url: jdbc:mysql://localhost:3306/insurance
     username: root
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: update 
+      ddl-auto: update
     properties:
       hibernate:
-    show-sql: true  
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
     
+server:
+  port: 9093
 
