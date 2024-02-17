@@ -4,7 +4,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: Nag@15199
-    url: jdbc:mysql://localhost:3306/nagesh
+    url: jdbc:mysql://localhost:3306/nag
     username: root
   jpa:
     generate-ddl: true
