@@ -76,11 +76,7 @@ pipeline {
 
     stage('Update Image Tag in GitOps') {
       steps {
-        checkout scmGit(branches: [
-          [name: '*/main']
-        ], extensions: [], userRemoteConfigs: [
-          [credentialsId: 'git-ssh', url: 'https://github.com/nageshgitversion/deployment-folder.git']
-        ])
+        checkout scmGit(branches: [[name: '*/main'] ], extensions: [], userRemoteConfigs: [[credentialsId: 'git-ssh', url: 'https://github.com/nageshgitversion/deployment-folder.git']])
         script {
           sh '''
           
