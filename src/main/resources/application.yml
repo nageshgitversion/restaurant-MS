@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: Nag15188
-    url: jdbc:mysql://mysql-db.ct91asccasgf.eu-west-2.rds.amazonaws.com:3306/restaurantdb
-    username: admin
+    password: Nag@15199
+    url: jdbc:mysql://localhost:3306/restaurantdb
+    username: root
   jpa:
     generate-ddl: true
     hibernate:
@@ -13,6 +13,4 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: false
     
-server: 
-  port: 9093
 
