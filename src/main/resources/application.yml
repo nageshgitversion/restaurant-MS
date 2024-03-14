@@ -1,9 +1,9 @@
+server:
+  port:9091
+  
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: Nag@15199
-    url: jdbc:mysql://localhost:3306/restaurantdb
-    username: root
   jpa:
     generate-ddl: true
     hibernate:
