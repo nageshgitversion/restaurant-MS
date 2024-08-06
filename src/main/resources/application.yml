@@ -1,16 +1,14 @@
-server:
-  port:9091
-  
 spring:
   datasource:
+    username: admin
+    password: Nag15188
+    url: jdbc:mysql://database-1.cjyk62o4exjc.ap-south-1.rds.amazonaws.com:3306/restaurant
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    generate-ddl: true
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-    show-sql: false
+    show-sql: true
+server:
+  port: 9091
     
 
